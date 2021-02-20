@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recursion</title>
+  </head>
+  <body>
+    <script>
+      function isEven(n) {
+        if (n == 0) {
+          return true;
+        } else if (n == 1) {
+          return false;
+        }else if (n < 0) {
+            return isEven(-n);
+        }else {
+          return isEven(n - 2);
+        }
+      }
+      console.log(isEven(50));
+      console.log(isEven(75));
+      console.log(isEven(-1));
+      console.log(isEven(-2));
+    </script>
+  </body>
+</html>
