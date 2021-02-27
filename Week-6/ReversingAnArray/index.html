@@ -9,6 +9,21 @@
 <body>
     <script>
         
+        function reverseArray(array){
+            let inverse = [];
+            for(i = array.length -1; i >= 0; i--)
+                inverse.push(array[i]);
+                return inverse;
+            
+        }
+
+      /*   function reverseArrayInPlace(array){
+            //did not understand this one.
+            // will revisit later.
+        }
+ */
+
+        console.log(reverseArray(["A","B","C","D","E"]));
     </script>
 </body>
 </html>
