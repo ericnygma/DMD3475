@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Form</title>
+</head>
+<body>
+    <form action="">
+        <div>
+            <label for="fname">First name: </label>
+            <input type="text" id="fname"><br><br>
+        </div>
+        <div>
+            <label for="eMail">Email:  </label>
+            <input type="email" id="email"><br><br>
+        </div>
+        <div>
+        <label for="subject">Subject: </label>
+        <input type="text" id="subject"><br><br>
+        </div>
+        <div>
+            <label for="message">Message: </label>
+            <input type="textbox"  id="message"><br><br>
+        </div>
+        <div>
+            <input type="submit" value="Submit" id="submit">
+        </div>
+
+    </form>
+    <p></p>
+
+    <script>
+        let form = document.querySelector("form");
+        let para = document.querySelector("p");
+        let name = document.getElementById("fname");
+        let email = document.getElementById("email");
+        let subject = document.getElementById("subject");
+        let message = document.getElementById("message");
+
+        form.onsubmit = function(e){
+            if (name.value === "" || email.value === "" || subject.value === "" || message.value === ""){
+                e.preventDefault();
+                para.textContent = "You need to fill in all fields.";
+            }else
+            para.textContent = "Message successfully sent!"
+        }
+        
+
+
+    </script>
+</body>
+</html>

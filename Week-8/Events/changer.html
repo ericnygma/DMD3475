@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker</title>
+</head>
+<body>
+    <p>Choose Background Color</p>
+     
+     <label for="colorWell">Color:</label>
+     <input type="color" value="#ff0000" id="colorWell">
+     
+     <p></p>
+
+<script>
+    var colorWell;
+    var body = document.querySelector('body');
+    var defaultColor = "#0000ff";
+
+window.addEventListener("load", startup, false);
+//test this line
+window.addEventListener("load", remember, false);
+
+function startup() {
+  colorWell = document.querySelector("#colorWell");
+  //colorWell.value = defaultColor;
+  colorWell.addEventListener("input", updateBody, false);
+  colorWell.addEventListener("change", updateBody, false);
+  colorWell.select();
+
+  
+}
+// updates the body color
+function updateBody(e){
+    //var b = document.querySelector("body");
+
+    if(body){
+        body.style.backgroundColor = e.target.value;
+    
+    }
+} 
+//Local Storage
+function remember(){
+if(!localStorage.getItem('backgroundColor')){
+    populateStorage();
+} else {
+    setStyles();
+}
+function populateStorage(){
+    localStorage.setItem('backgroundColor', body.style.backgroundColor.value);
+    setStyles();
+}
+function setStyles(){
+    var currentColor = localStorage.getItem('backgroundColor');
+
+    body.style.backgroundColor.value = currentColor;
+
+    body.style.backgroundColor = '#' + currentColor;
+}
+}
+
+
+/* if(!localStorage.getItem('backgroundColor')){
+    populateStorage();
+} else {
+    setStyles();
+}
+function populateStorage(){
+    localStorage.setItem('backgroundColor', updateBody())
+    setStyles();
+}
+function setStyles(){
+    var currentColor = localStorage.getItem('backgroundColor');
+
+    body.style.backgroundColor.value = currentColor;
+
+    body.style.backgroundColor = '#' + currentColor;
+} */
+
+</script>
+</body>
+</html>
