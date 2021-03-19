@@ -39,24 +39,55 @@
 
   </body>
   <script>
-    let button = document.querySelectorAll('button');
-    let red = button[0];
-    let yellow = button[1];
-    let green = button[2];
-    let purple = button[3];
+    
 
   let buttonBar = document.querySelector('.button-bar');
-  buttonBar.addEventListener('click', )
+  
 
   // Add your code here
-  let button = document.querySelectorAll('button');
-  let buttonBar = document.querySelector('.button-bar');
 
-  red.onclick
-  yellow.onclick
-  green.onclick
-  purple.onclick
-    buttonBar.onclick
+  //Option 1 Start! Still work in progress
+  /* buttonBar.addEventListener("click", e => {
+    let button = document.querySelectorAll("button");
+    if (e.target.nodeName == "BUTTON"){
+      buttonBar.style.backgroundColor = button.getAttribute("data-color");
+      console.log("Clicked", e.target.textContent);
+    }
+  }); */
+  //Option 1 End!*
+  
+
+  //Option 2 Start!
+  let button = document.querySelectorAll("button");
+  let red = button[0];
+  let yellow = button[1];
+  let green = button[2];
+  let purple = button[3];
+
+  buttonBar.addEventListener("mousedown", ()=>{
+    console.log("Handler for buttonBar")
+  });
+  red.addEventListener("mousedown", event => {
+    buttonBar.style.backgroundColor = red.getAttribute("data-color");
+    event.stopPropagation();
+  });
+  yellow.addEventListener("mousedown", event => {
+    buttonBar.style.backgroundColor = yellow.getAttribute("data-color");
+    event.stopPropagation();
+  });
+  green.addEventListener("mousedown", event => {
+    buttonBar.style.backgroundColor = green.getAttribute("data-color");
+    event.stopPropagation();
+  });
+  purple.addEventListener("mousedown", event => {
+    buttonBar.style.backgroundColor = purple.getAttribute("data-color");
+    event.stopPropagation();
+  });
+
+  //Option 2 End!*
+
+
+
   </script>
 
 </html>
