@@ -64,19 +64,32 @@ resources.forEach(function(resources) {
     link.setAttribute("href", resources.href);
     listItem.appendChild(link);
 
-})
+});
 
-/* forLoop works, convert to forEach above.
-for( var i = 0; i < resources.length; i++){
-    var uList = document.querySelector("#resourceList");
-    var listItem = document.createElement('li');
-    uList.appendChild(listItem)
-    var link = document.createElement("a"); 
-    link.innerHTML = resources[i].innerHTML;
-    link.setAttribute("href", resources[i].href);
-    listItem.appendChild(link);
+/* Notes from class; other solution
+//Array[5]
+//Object, 3 properties
+//Want to build: <li><a href='link' title='title'>Something</a></li> */
+
+//Another Solution.
+/* 
+let uList = document.querySelector("#resourceList");
+
+resources.forEach(function(item) {
+    let li = '<li><a href="' + item.href + '"> + item.innerHTML + </a></li>;
+    ul.innerHTML += li;
+
+});
 } */
 
+//template literal syntax - better syntax, cleaner code
+/* let uList = document.querySelector("#resourceList");
+
+resources.forEach(function(item) {
+    let li = `<li><a href="${item.href}" title="${item.title}">${item.innerHTML}</a></li>`;
+    ul.innerHTML += li;
+
+}); */
 
 
 

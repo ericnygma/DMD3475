@@ -43,6 +43,7 @@
                 'Accept': 'application/json'
             }
           }).then(response => {
+              //Check for errors on form
               if (!response.ok){
                   throw new Error('response not ok');
               }
