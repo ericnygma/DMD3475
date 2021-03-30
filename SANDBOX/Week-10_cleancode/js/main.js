@@ -8,7 +8,7 @@ var button = document.querySelector('#submit');
 button.addEventListener('click', getUsers);
 
 //Start of new block of code...
-const formData = document.querySelector('.submit');
+/* const formData = document.querySelector('.submit');
 
 
 formData.addEventListener('submit', function(e){
@@ -26,7 +26,7 @@ formData.addEventListener('submit', function(e){
     }).catch(function (error) {
         console.log(error);
     })
-});
+}); */
 //End of code...
 function getUsers() {
     let x = document.getElementById("users").value;
@@ -54,9 +54,10 @@ async function mySearch() {
         
         document.getElementById('userResult').innerHTML += `
         <ul>
+            <img src="${element.avatar_url}" alt="" width="100" height="100"> 
             <li>Login: ${element.login}</li>
             <li>User page: <a href="${element.html_url}" title="${items.title}">${element.html_url}</a></li>
-            <img src="${element.avatar_url}" alt="" width="100" height="100"> 
+            
         </ul>
         
         `;
