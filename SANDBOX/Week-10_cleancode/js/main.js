@@ -10,6 +10,7 @@ button.addEventListener('click', getUsers);
 //Start of new block of code...
 const formData = document.querySelector('.submit');
 
+
 formData.addEventListener('submit', function(e){
     e.preventDefault();
 

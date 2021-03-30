@@ -30,9 +30,9 @@ let myRequest = new Request("./json/users.json")
         console.log(data.total_count);
         console.log(data.items);
         console.log(data.items[0].login);
-
         
 }) */
+
 mySearch();
 //async
 async function mySearch() {
@@ -40,9 +40,34 @@ async function mySearch() {
     const object =  await response.json();
     const items = await object.items;
     console.log(response);
+    console.log(object.total_count);
+    console.log(items.length);
     console.log(object);
     console.log(items);
+    document.querySelector('.count').innerHTML = object.total_count + ' Search results';
+    for(let i = 0; i < items.length; i++) {
+        //console.log(items[i].login);
+        //console.log(items[i].html_url);
+        let div = document.createElement('div');
+        document.getElementById('userResult').innerText = items[i].login;
+    }  
 }
+
+let uList = document.querySelector("#resourceList");
+
+resources.forEach(function(item) {
+    let li = `<li><a href="${item.href}" title="${item.title}">${item.innerHTML}</a></li>`;
+    ul.innerHTML += li;
+
+});
+
+
+
+//Attempt
+/* let li = `<li>${items[i].login}
+<a href="${items[i].html_url}" title="${items.title}">${items.innerHTML}</a></li>`;
+    ul.innerHTML += li;
+ */
 
 //------everything below is work in progress ( mostly broken shit)------
 /* example from book 
