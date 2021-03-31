@@ -4,34 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://unpkg.com/@primer/css@^16.0.0/dist/primer.css" rel="stylesheet" />
     <title>UCONN Github Search </title>
 </head>
 <body>
     <p>
-        <h1>UCONN Github Search</h1>
+        <h1 class="m-3">UCONN Github Search</h1>
     </p>
+
     <div>
-        <form action="" method="get">
-            <label for="Search">Search: </label>
-            <input type="search" id="users" placeholder="Search" value="">
+        <form class="form m-3" action="./json/users.json" method="GET" id="formData">
+            
+            <input type="search" id="users" name="q">
             <div>
-                <input type="submit" value="Submit" id="submit">
+                
+                <button class="btn" type="submit" id="submit">Submit</button>
             </div>
         </form>
     </div>
-    <p class="count" id="count"></p>
-    <div id="userResult"></div>
-    <div class="zen-resources" id="zen-resources">
-        <h3 class="resources">Resources:</h3>
 
-        <!-- Add new links to #resourceList -->
-        <!-- Use the values from the "resources" variable in your js file -->
-        <ul id="resourceList">
+    <!--display user output-->
+    <p class="count m-3" id="count"></p>
+    <p class="count m-3" id="userResult"></p>
+    
 
-        </ul>
-    </div>
-
-   <script src="js/main.js"></script>
+   <script src="js/newmain.js"></script>
 </body>
 </html>
-
