@@ -1,0 +1,70 @@
+/*reset*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bright:#fff;
+    --dark:#000; 
+    --green:rgb(118, 238, 5);   
+}
+
+.mainBody {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    /*color: black;*/
+}
+#date,
+#time {
+    font-size: 8rem;
+}
+
+h1 {
+    margin-bottom: 3rem;
+}
+
+h2 {
+    margin-bottom: 0.5rem;
+    /* opacity: 0.6; */
+    
+       
+}
+
+
+@media(max-width: 700px), (prefers-color-scheme: dark){
+    #time {
+        font-size: 6rem;
+    }
+    :root {
+		--dark: #fff;
+		--bright: #000;
+	}
+}
+
+
+/*TEST AREA BELOW*/
+
+
+#dgraph  {
+	height: 3vh;
+	width: 80vw;
+	border: 1px solid var(--dark);
+	overflow: hidden;
+	margin-bottom: 5vh;
+	margin-left: 10vw;
+    background: var(--bright);
+}
+
+#dbar  {
+	height: 3vh;
+	width: 0vw;
+	background: var(--green);
+	transition: width 0.5s;
+}
