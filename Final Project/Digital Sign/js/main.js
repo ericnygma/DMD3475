@@ -10,43 +10,35 @@ const time = document.querySelector('time'),
 const AK = "8vRzc2a6YbiK-SkHz6KSBfylu-HA-R5urpuTKZP-bp8"
 const SK = "_50xrugdgxy4Fi3GhXY0aN-j2utZFjUYabTccibTRsw"
 
-//Show AM PM
-const showAmPm = true;
 
-    // Show Time
+// Show Time
 function showTime() {
     let today = new Date(),
-        hour = today.getHours(),
-        min = today.getMinutes(),
-        sec = today.getSeconds(),
-        fd = today.toString(),
-        mo = today.getMonth()+1,
-        da = today.getUTCDate(),
-        ye = today.getFullYear();
-
-    //Set AM or PM
-    const amPM = hour >= 12 ? 'PM' : 'AM';
-    
-    //12hr Format
-    hour = hour % 12 || 12;
-
-    // Output Date - commented out for diff config
-    /* date.innerHTML = `${mo}<span>/<span>${da}<span>/<span>${ye}`; */
-
-    // Output Time - commented out for diff config
-    /* time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)}<span> </span>${amPM}`; */
-
+        fd = today.toString();
+     
     now.innerHTML = fd;
-    setTimeout(showTime, 1000);
-
     
+}  
 
-}    
+//TESTING AREA BELOW
+let def_with = 80;
 
-// Add Zero
-function addZero(n) {
-    return (parseInt(n, 10) < 10 ? '0' : '') +n;
-}
+//Main Interval
+setInterval(() => {
+	
+	
+	//calculate percentage for day
+    let now = new Date(),
+	    startOfDay = new Date();
+	startOfDay.setHours(0);
+	startOfDay.setMinutes(0);
+	startOfDay.setSeconds(0);
+	startOfDay.setMilliseconds(0);
+	let elapsedD = now - startOfDay, 
+	     dperc = elapsedD / 1000 / 86400;
+	dperc = Math.round(dperc * 100000) / 1000;
+	dbar.style.width = def_with * dperc / 100 + "vw";
+}, 1000); 
 
 // Set Background and Greeting (depending on time of day)
 function setBG() {
@@ -104,23 +96,3 @@ showTime();
 setBG();
 getName();
 
-//TESTING AREA BELOW
-let def_with = 80;
-
-//Main Interval
-setInterval(() => {
-	
-	
-	//calculate percentage for day
-    let now = new Date();
-	let startOfDay = new Date();
-	startOfDay.setHours(0);
-	startOfDay.setMinutes(0);
-	startOfDay.setSeconds(0);
-	startOfDay.setMilliseconds(0);
-	let elapsedD = now - startOfDay;  //let elapsedD = now - startOfDay
-	let dperc = elapsedD / 1000 / 86400;
-	dperc = Math.round(dperc * 100000) / 1000;
-	//dpp.innerHTML = dperc + "%";
-	dbar.style.width = def_with * dperc / 100 + "vw";
-}, 1000); 
