@@ -1,4 +1,4 @@
-//DOM
+localStorage//DOM
 const time = document.querySelector('time'),
     greeting = document.getElementById('greeting'),
     urName = document.getElementById('name'),
@@ -17,16 +17,14 @@ function showTime() {
         fd = today.toString();
      
     now.innerHTML = fd;
-    setTimeout(showTime, 1000);
+    
 }  
 
-//TESTING AREA BELOW
 let def_with = 80;
 
 //Main Interval
 setInterval(() => {
-	
-	
+		
 	//calculate percentage for day
     let now = new Date(),
 	    startOfDay = new Date();

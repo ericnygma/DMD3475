@@ -1,0 +1,60 @@
+/*Happy 2020! 🎉*/
+
+:root {
+	--bright: rgb(255, 255, 255);
+	--dark: #000;
+}  
+
+#container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	font-family: "IBM Plex Mono", monospace;
+	font-size: 2vh;
+	color: var(--dark);
+	overflow: hidden;
+	background: var(--bright);
+}
+
+#barcontainer {
+	position: absolute;
+	top: 18vh;
+	left: 0;
+	right: 0;
+	height: 75vh;
+	overflow: hidden;
+}
+
+#title {
+	font-size: 7vh;
+	margin-left: 10vw;
+	margin-bottom: 7vh;
+	font-weight: 700;
+}
+
+
+#dp {
+	margin-left: 10vw;
+	margin-bottom: 1vh;
+}
+
+#dgraph  {
+	height: 3vh;
+	width: 80vw;
+	border: 1px solid var(--dark);
+	overflow: hidden;
+	margin-bottom: 5vh;
+	margin-left: 10vw;
+}
+
+#dbar  {
+	height: 3vh;
+	width: 0vw;
+	background: var(--dark);
+	transition: width 0.5s;
+}
+
+
+
