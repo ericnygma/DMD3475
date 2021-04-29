@@ -6,7 +6,7 @@ const time = document.querySelector('time'),
     now = document.querySelector('now');
     
 
-//API infor
+//API inform
 const AK = "8vRzc2a6YbiK-SkHz6KSBfylu-HA-R5urpuTKZP-bp8"
 const SK = "_50xrugdgxy4Fi3GhXY0aN-j2utZFjUYabTccibTRsw"
 
@@ -14,28 +14,29 @@ const SK = "_50xrugdgxy4Fi3GhXY0aN-j2utZFjUYabTccibTRsw"
 // Show Time
 function showTime() {
     let today = new Date(),
+       
         fd = today.toString();
-     
+    
     now.innerHTML = fd;
     setTimeout(showTime, 1000);
-}  
 
-//TESTING AREA BELOW
+}    
+
+//Progress bar
 let def_with = 80;
 
-//Main Interval
 setInterval(() => {
 	
 	
 	//calculate percentage for day
-    let now = new Date(),
-	    startOfDay = new Date();
+    let now = new Date();
+	let startOfDay = new Date();
 	startOfDay.setHours(0);
 	startOfDay.setMinutes(0);
 	startOfDay.setSeconds(0);
 	startOfDay.setMilliseconds(0);
-	let elapsedD = now - startOfDay, 
-	     dperc = elapsedD / 1000 / 86400;
+	let elapsedD = now - startOfDay;  
+	let dperc = elapsedD / 1000 / 86400;
 	dperc = Math.round(dperc * 100000) / 1000;
 	dbar.style.width = def_with * dperc / 100 + "vw";
 }, 1000); 
@@ -96,3 +97,4 @@ showTime();
 setBG();
 getName();
 
+ 
